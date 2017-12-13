@@ -3,43 +3,26 @@ const fs = require('fs');
 const mkdirp = require('mkdirp');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongoose = require('mongoose');
+
+const notes = require('./routes/notes.js');
 
 const app = express();
 
-// Create database directory on local if not existing
-mkdirp("db", function (err){
-    if (err) return cb(err);
+const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost';
+
+mongoose.connect(mongoDB + '/notes', function(err) {
+    if (err) {
+      console.log("connection to mongo failed");
+    }
 });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-var notes = [];
-
-// read database file from local to create initial data
-fs.readFile('db/notes.json', function(err, data){
-  if(data){
-    let parsedData = JSON.parse(data);
-    if(typeof parsedData == "object"){
-      notes = parsedData;
-    }
-  }
-});
-
-// serve static content from under /public/ dir
 app.use('/', express.static(__dirname + "/public/"));
 
-app.post('/notes', function(req, res){
-  notes.push(req.body);
-  fs.writeFile('db/notes.json', JSON.stringify(notes), { flag: 'w' }, function(err){
-    if(err) throw err;
-  })
-  res.send(notes);
-});
-
-app.get('/notes', function(req, res){
-  res.send(notes);
-});
+app.use('/notes', notes);
 
 app.listen(4000, function(){
   console.log("Server started at port 4000");

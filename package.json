@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/dare-rider/notes#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "jquery": "^3.2.1",
-    "mkdirp": "latest"
+    "mkdirp": "latest",
+    "mongoose": "^4.13.7"
   }
 }
