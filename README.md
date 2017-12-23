@@ -1,5 +1,9 @@
 # Notes
 
+[![Build Status](https://travis-ci.org/jboss-outreach/notes.svg?branch=master)](https://travis-ci.org/jboss-outreach/notes)
+
+
+
 A node application to manage notes
 
 ## Setting up the project
@@ -35,3 +39,4 @@ where [MongoDB version] is the version of the MongoDB installation you have.
 ```bash
 $ node server.js
 ```
+
