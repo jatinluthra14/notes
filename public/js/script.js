@@ -7,7 +7,7 @@ $(function(){
       inpbox.val("");
       let listdata = "";
       notes.forEach(function(note){
-        listdata += "<li>" + note.task + "</li>";
+        listdata += "<td width='20%'>" + note.task + "</td>";
       });
       list.html(listdata);
   }
@@ -20,6 +20,7 @@ $(function(){
 })
 
 
+
 angular.module('patternfly.navigation').controller('vertNavController', ['$scope',
   function ($scope) {
     $scope.navigations = [
@@ -27,7 +28,7 @@ angular.module('patternfly.navigation').controller('vertNavController', ['$scope
               title: "View Notes",
               iconClass: "fa fa-sticky-note-o",
               uiSref: "ViewNotes",
-              uiSrefOptions: { someKey: 'SomeValue' }              
+              uiSrefOptions: { someKey: 'SomeValue' }
             },
             {
               title: "Share",
@@ -44,7 +45,7 @@ angular.module('patternfly.navigation').controller('vertNavController', ['$scope
               ]
             },
             {
-              title: "Jboss Community Notes",
+              title: "JBoss Community Notes",
               iconClass : "fa fa-space-shuttle",
               uiSref: "ipsum",
               children: [
@@ -60,6 +61,11 @@ angular.module('patternfly.navigation').controller('vertNavController', ['$scope
             {
               title: "Contact Us",
               iconClass : "fa fa-phone"
+            },
+            {
+              title: "Reminders",
+              iconClass: "fa fa-bell-o",
+              uiSref: "Reminders"
             }
           ];
 
