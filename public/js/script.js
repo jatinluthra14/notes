@@ -7,15 +7,15 @@ $(function(){
       inpbox.val("");
       let listdata = "";
       notes.forEach(function(note){
-        listdata += "<td width='20%' class='card-panel z-depth-4'>" + note.task + "</td>";
+        listdata += "<td width='20%' cellspacing='20'>" + note.task + "<br><br></td>";
       });
       list.html(listdata);
   }
 
   btn.click(function(){
     $.post("/notes",{task: inpbox.val(), done: false}, refresh);
+    count = count + 1;
   })
-
   $.get('/notes', refresh);
 })
 
