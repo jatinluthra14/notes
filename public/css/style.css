@@ -11,7 +11,7 @@
 	background-color: #eae5e5;
 }
 
-#btn-note {
+#btn-note, #btn-reminder {
 	margin-top: 15px;
 	width: 25%;
 	padding: 10px;
