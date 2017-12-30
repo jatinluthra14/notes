@@ -1,17 +1,78 @@
 .text-center {
   text-align: center;
-
   font-family: 'Raleway', sans-serif;
 }
-.texts{
-	
+.texts {
 	font-family: 'Raleway', sans-serif;
 	font-size: 40px;
-
 }
-#btn{
+
+.bg {
+	background-color: #eae5e5;
+}
+
+#btn-note, #btn-reminder {
 	margin-top: 15px;
 	width: 25%;
 	padding: 10px;
 	font-size: 15px;
+}
+
+.borderSpaced {
+	border-spacing: 100px;
+}
+
+
+table {
+	border-spacing: 100px;
+    border-collapse: separate;
+}
+
+#list {
+    display: block;
+    margin-left: 100px;
+    border-spacing: 20px;
+    border-spacing: 100px;
+}
+
+#list thead {
+    display: none;
+    border-spacing: 10px;
+}
+
+#list tr {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0.5rem 0.5rem 1rem;
+    background-color: transparentize( white, 0.15 );
+    box-shadow: 0 0 1rem transparentize( black, 0.9 );
+    border-spacing: 10px;
+}
+
+#list td {
+	display: inline-block;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0.5rem;
+    text-align: left;
+    background-color: rgba(239, 83, 80, 0.8);
+    color: black;
+    font-family: 'Roboto Slab', serif;
+    border: 1px solid transparentize( #58C25F, 0.5 );
+    /*box-shadow: rgba(0,0,0,0.7);*/
+    font-size: 35px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+    border-spacing: 10px;
+    vertical-align: middle;
+}
+
+#list td:before{
+    float: left;
+    margin: -0.5rem 0.5rem -0.5rem -0.5rem;
+    padding: 0.625rem 0.5rem 0.625rem;
+    font-size: 0.75em;
+    font-weight: bold;
+    background: transparentize( #58C25F, 0.9 );
+    color: #58C25F;
+    border-spacing: 10px;
 }
