@@ -9,13 +9,13 @@ const notes = require('./routes/notes.js');
 
 const app = express();
 
-const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost';
+const bluebird = require('bluebird');
+mongoose.Promise = bluebird;
 
-mongoose.connect(mongoDB + '/notes', function(err) {
-    if (err) {
-      console.log("connection to mongo failed");
-    }
-});
+const mongoDB = (process.env.MONGODB_URI || 'mongodb://localhost') + '/notes';
+mongoose.connect(mongoDB, {useMongoClient: true})
+.then(() => console.log('Connection to MongoDB succeeded'))
+.catch((err) => console.log('Connection to MongoDB failed'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

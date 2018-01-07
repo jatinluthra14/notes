@@ -1,9 +1,6 @@
 const express = require('express');
-const promise = require('bluebird');
 const mongoose = require('mongoose');
 const router = express.Router();
-
-promise.promisifyAll(mongoose);
 
 const Note = mongoose.model('Note', new mongoose.Schema({
   task: { type: 'String', required: true },
@@ -11,7 +8,7 @@ const Note = mongoose.model('Note', new mongoose.Schema({
 }));
 
 router.get('/', function(req, res) {
-  Note.findAsync()
+  Note.find()
   .then(function(notes) {
     res.send(notes);
   })
@@ -22,9 +19,9 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
   var note = new Note(req.body);
-  note.saveAsync()
+  note.save()
   .then(function(note) {
-    Note.findAsync()
+    Note.find()
     .then(function(notes) {
       res.send(notes);
     })
