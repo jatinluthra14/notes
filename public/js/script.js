@@ -64,10 +64,16 @@ angular.module('patternfly.navigation').controller('vertNavController', ['$scope
             },
             {
               title: "Reminders",
-              iconClass: "fa fa-bell-o",
-              uiSref: "Reminders"
+              iconClass: "fa fa-bell-o"
+              //href: "/reminders.html"
             }
           ];
+          $scope.handleNavigateClick = function (item) {
+      if (item.title === "Reminders") {
+          location.href = "/reminders.html";
+      }
+    };
 
   }
 ]);
+

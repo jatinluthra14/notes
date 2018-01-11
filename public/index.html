@@ -44,7 +44,7 @@
 <body>
 <!--<body id="verticalNavLayout" class="layout-pf layout-pf-fixed faux-layout" ng-controller="vertNavController">-->
 <div id="verticalNavLayout" class="layout-pf layout-pf-fixed faux-layout navbar bg" ng-controller="vertNavController">
-<pf-vertical-navigation - -basic items="navigations" class="texts" brand-alt="JBoss Notes" show-badges="true" pinnable-menus="true" update-active-items-on- click="true"> </pf-vertical-navigation - -basic>
+<pf-vertical-navigation - -basic items="navigations" class="texts" navigate-callback="handleNavigateClick" item-click-callback="handleNavigateClick" brand-alt="JBoss Notes" show-badges="true" pinnable-menus="true" update-active-items-on- click="true"> </pf-vertical-navigation - -basic>
 
       <div id="contentContainer" class="container-fluid container-cards-pf container-pf-nav-pf-vertical">
         <div class="borderSpaced">
